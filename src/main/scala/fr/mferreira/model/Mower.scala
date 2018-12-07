@@ -17,7 +17,7 @@ case class Mower(position: Position, direction: Direction) {
 
   def move() : Mower ={
     direction match {
-      case N => position.move(position, 1, 0) //pb comment acceder a la fonction move de position
+      case N => position.move(position, 0, 1) //pb comment acceder a la fonction move de position
     }
   }
 
