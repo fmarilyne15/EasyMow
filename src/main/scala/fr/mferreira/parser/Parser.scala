@@ -1,8 +1,8 @@
-package fr.mferreira.file
+package fr.mferreira.parser
 import scala.io.Source
 import scala.util.Try
 
-class File{
+class Parser{
 
   def getLinesFromFile(name: String) : Try[List[String]] ={
     Try(Source.fromResource(name).getLines.toList)
