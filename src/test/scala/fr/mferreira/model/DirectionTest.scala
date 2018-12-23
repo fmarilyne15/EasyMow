@@ -19,4 +19,5 @@ class DirectionTest extends FlatSpec{
     Direction.S.right should be(Direction.W)
   }
 
+
 }
