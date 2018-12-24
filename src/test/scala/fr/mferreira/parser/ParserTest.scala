@@ -1,7 +1,7 @@
 package fr.mferreira.parser
 import org.scalatest._
 import Matchers._
-import fr.mferreira.model.{Direction, Mower, Position}
+import fr.mferreira.model.{Command, Direction, Mower, Position}
 
 import scala.util.{Failure, Success}
 
@@ -16,5 +16,13 @@ class ParserTest extends FlatSpec {
 
   "new mower " should "correctly when parse a new mower" in {
     parser.lineToMower("5 5 N") should be (Mower(Position(5, 5), Direction.N))
+  }
+
+  "new line command " should "return a list of command" in {
+    parser.lineToCommand("ADAG") should be (List(Command.A, Command.D, Command.A, Command.G))
+  }
+
+  "new line command with some space " should "return a list of command" in {
+    parser.lineToCommand("A D AG") should be (List(Command.A, Command.D, Command.A, Command.G))
   }
 }

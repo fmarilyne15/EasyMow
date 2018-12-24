@@ -1,5 +1,5 @@
 package fr.mferreira.parser
-import fr.mferreira.model.{Direction, Mower, Position}
+import fr.mferreira.model.{Command, Direction, Mower, Position}
 
 import scala.io.Source
 import scala.util.Try
@@ -16,5 +16,9 @@ class Parser{
     val y = array(1).toInt
 
     Mower(Position(x, y), Direction.toDirection(array(2)))
+  }
+
+  def lineToCommand(line: String): List[Command] = {
+    line.flatMap(x => Command.toCommand(x)).toList
   }
 }
