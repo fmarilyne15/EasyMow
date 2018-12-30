@@ -29,5 +29,4 @@ case class Mower(position: Position, direction: Direction) {
     }
   }
 
-  override def toString: String = position + " " + direction
 }

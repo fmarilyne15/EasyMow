@@ -22,7 +22,7 @@ class MowerTest extends FlatSpec{
     Mower(Position(0, 0), Direction.S).execute(Command.A) should be (Mower(Position(0, -1), Direction.S))
   }
 
-  "toString mower " should "correctly when toString is use" in {
-    "5 4 S" should be (Mower(Position(5, 4), Direction.S).toString)
+  "show mower " should "correctly when show is use" in {
+    "5 4 S" should be (Print.print(Mower(Position(5, 4), Direction.S)))
   }
 }

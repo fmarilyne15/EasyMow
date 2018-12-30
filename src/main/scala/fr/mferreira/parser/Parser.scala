@@ -11,8 +11,8 @@ object Parser{
   }
 
   def lineToMower(line: String): Try[Mower] = {
-    val array = line.split(" ")
     Try{
+      val array = line.split(" ")
       val x = array(0).toInt
       val y = array(1).toInt
 
