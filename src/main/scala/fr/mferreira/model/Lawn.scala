@@ -1,18 +1,24 @@
 package fr.mferreira.model
+
+import fr.mferreira.parser.Parser.MowersWithCommands
+
 trait Lawn {
 
   def inside(p: Position): Boolean
 
-  def simulate(mower: Mower, commands: List[Command]): Mower = {
+  def simulateOneMower(mower: Mower, commands: List[Command]): Mower = {
     commands match {
       case h :: d =>
         val newMower = mower.execute(h)
-        if(inside(newMower.position)) simulate(newMower, d)
-      else simulate(mower, d)
+        if(inside(newMower.position)) simulateOneMower(newMower, d)
+      else simulateOneMower(mower, d)
       case Nil => mower
     }
   }
 
+  def simulate(mowersWithCommands : List[MowersWithCommands]): List[Mower]= {
+      mowersWithCommands.map(x => simulateOneMower(x._1, x._2))
+  }
 }
 
 case class RectangularLawn(x: Int, y: Int) extends Lawn {
