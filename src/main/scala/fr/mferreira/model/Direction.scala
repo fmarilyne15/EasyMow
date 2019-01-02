@@ -5,8 +5,6 @@ import fr.mferreira.model.Direction._
 sealed trait Direction{
   def left : Direction
   def right : Direction
-  def toString: String
-
 }
 object Direction {
 
@@ -21,8 +19,6 @@ object Direction {
   case object W extends Direction {
     override def left: Direction = S
     override def right: Direction = N
-
-    override def toString: String = "W"
   }
 
   case object E extends Direction {
