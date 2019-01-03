@@ -9,7 +9,7 @@ object Print {
     }
 
     implicit val mowerShow: Show[Mower] = new Show[Mower] {
-        override def show(mower: Mower): String = mower.position.x + " " +mower.position.y + " " + mower.direction
+        override def show(mower: Mower): String = Print.print(mower.position) + " " + Print.print(mower.direction)
     }
 
     implicit val positionSow: Show[Position] = new Show[Position] {

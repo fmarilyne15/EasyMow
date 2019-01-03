@@ -11,8 +11,8 @@ case class Mower(position: Position, direction: Direction) {
   def execute(command: Command) : Mower ={
     command match {
       case A => this.move()
-      case G =>  this.copy(direction = direction.left)
-      case D =>  this.copy(direction = direction.right)
+      case G =>  this.copy(direction = Direction.returnNewDirection(G, direction))
+      case D =>  this.copy(direction = Direction.returnNewDirection(D, direction))
     }
   }
 

@@ -44,7 +44,7 @@ object Parser{
             val x = array(0).toInt
             val y = array(1).toInt
 
-            Mower(Position(x, y), Direction.toDirection(array(2)))
+            Mower(Position(x, y), Direction.stringToDirection(array(2)))
         }
     }
 

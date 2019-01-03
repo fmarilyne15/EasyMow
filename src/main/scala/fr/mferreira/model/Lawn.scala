@@ -19,6 +19,7 @@ trait Lawn {
   def simulate(mowersWithCommands : List[MowersWithCommands]): List[Mower]= {
       mowersWithCommands.map(x => simulateOneMower(x._1, x._2))
   }
+
 }
 
 case class RectangularLawn(x: Int, y: Int) extends Lawn {
