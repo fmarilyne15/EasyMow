@@ -20,10 +20,11 @@ class DirectionTest extends FlatSpec{
     }
 
     "String to direction " should "return the direction coresponding of string" in {
-        Direction.stringToDirection("S") should be(Direction.W)
-        Direction.stringToDirection("E") should be(Direction.E)
-        Direction.stringToDirection("N") should be(Direction.N)
-        Direction.stringToDirection("S") should be(Direction.S)
+        Direction.stringToDirection("W") should be(Some(Direction.W))
+        Direction.stringToDirection("E") should be(Some(Direction.E))
+        Direction.stringToDirection("N") should be(Some(Direction.N))
+        Direction.stringToDirection("S") should be(Some(Direction.S))
+        Direction.stringToDirection("oups") should be(None)
     }
 
 }

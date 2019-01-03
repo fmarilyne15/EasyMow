@@ -43,8 +43,11 @@ object Parser{
             val array = line.split(" ")
             val x = array(0).toInt
             val y = array(1).toInt
-
-            Mower(Position(x, y), Direction.stringToDirection(array(2)))
+            val direction = Direction.stringToDirection(array(2))
+            direction match {
+                case Some(value) => Mower(Position(x, y), value)
+                case None => throw new IllegalArgumentException("Direction must be A, G or D.")
+            }
         }
     }
 
