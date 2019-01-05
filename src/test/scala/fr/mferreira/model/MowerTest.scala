@@ -5,19 +5,19 @@ import Matchers._
 
 class MowerTest extends FlatSpec{
 
-    "Advence west " should "x+1" in {
+    "Advance west " should "correctly when mowee advance to the west" in {
         Mower(Position(0, 0), Direction.W).execute(Command.A) should be (Mower(Position(-1, 0), Direction.W))
     }
 
-    "Advence east " should "y+1" in {
+    "Advance east " should "correctly when mowee advance to the east" in {
         Mower(Position(0, 0), Direction.E).execute(Command.A) should be (Mower(Position(1, 0), Direction.E))
     }
 
-    "Advence north " should "y+1" in {
+    "Advance north " should "correctly when mowee advance to the north" in {
         Mower(Position(0, 0), Direction.N).execute(Command.A) should be (Mower(Position(0, 1), Direction.N))
     }
 
-    "Advence south " should "y-1" in {
+    "Advance south " should "correctly when mowee advance to the south" in {
         Mower(Position(0, 0), Direction.S).execute(Command.A) should be (Mower(Position(0, -1), Direction.S))
     }
 

@@ -52,7 +52,7 @@ object Parser{
     }
 
     def lineToCommand(line: String): List[Command] = {
-        line.flatMap(x => Command.toCommand(x)).toList
+        line.flatMap(x => Command.stringToCommand(x)).toList
     }
 
 }

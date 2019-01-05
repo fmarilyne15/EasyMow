@@ -8,7 +8,7 @@ object Command {
     case object D extends Command
     case object G extends Command
 
-    def toCommand(char: Char) : Option[Command] = {
+    def stringToCommand(char: Char) : Option[Command] = {
         char match {
             case 'A' => Option(A)
             case 'D' => Option(D)
