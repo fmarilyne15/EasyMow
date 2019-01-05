@@ -17,8 +17,6 @@ object Parser{
             val array = line.split(" ")
             val x = array(0).toInt
             val y = array(1).toInt
-            if(x < 1 || y < 1)
-                throw new IllegalArgumentException("lawn must be positive.")
             RectangularLawn(x, y)
         }
     }
@@ -43,6 +41,8 @@ object Parser{
             val array = line.split(" ")
             val x = array(0).toInt
             val y = array(1).toInt
+            if(x < 1 || y < 1)
+                throw new IllegalArgumentException("Position must be positive.")
             val direction = Direction.stringToDirection(array(2))
             direction match {
                 case Some(value) => Mower(Position(x, y), value)
