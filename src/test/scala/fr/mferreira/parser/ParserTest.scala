@@ -11,10 +11,6 @@ class ParserTest extends FlatSpec {
         Parser.lineToLawn("3 3")  should be (Success(RectangularLawn(3, 3)))
     }
 
-    "new negative lawn " should "throw IllegalArgumentException" in {
-        Parser.lineToLawn("-3 3") should be (Failure(new IllegalArgumentException("lawn must be positive.")))
-    }
-
     "new mower " should "correctly when parse a new mower" in {
         Parser.lineToMower("5 5 N") should be (Success(Mower(Position(5, 5), Direction.N)))
     }

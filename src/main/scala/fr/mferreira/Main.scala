@@ -4,11 +4,12 @@ package fr.mferreira
 import fr.mferreira.model.Print
 import fr.mferreira.parser.Parser
 
-import scala.util.{Failure, Success}
+import scala.util.{Failure, Success, Try}
 
 
 object Main extends App{
-    Parser.getLinesFromFile("\\test1.txt") match {
+    val file =  Try(args(0)).getOrElse("\\mowers.txt")
+    Parser.getLinesFromFile(file) match {
         case Success(lines) =>
             Parser.lineToLawn(lines.head) match {
                 case Success(lawn) =>
